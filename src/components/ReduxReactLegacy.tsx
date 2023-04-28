@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 /**
  * En este archivo vamos a ver como se usa redux
  * de forma legacy dentro de react.
@@ -41,13 +42,21 @@ store.subscribe(() => {
 
 const ReduxLegacy = () => {
   // state to force re-render
-  const [toogle, setToggle] = useState(false)
+  const [, setToggle] = useState(false)
 
   const forceRerender = () => {
     setToggle((toggle) => !toggle)
   }
   return (
     <div>
+      <p>
+        En este ejemplo en código puedes ver como usar redux legacy en formato js standard sin dependencias para
+        utilizar en aplicaciones de react.
+      </p>
+      <p>
+        En la clase de <Link to='/redux/react'>Redux optimizado para react</Link> se verá el uso de redux con las
+        dependencias necesarias y optimizadas para usar en React
+      </p>
       <p>Estado actual: {store.getState()}</p>
       <button
         onClick={() => {
